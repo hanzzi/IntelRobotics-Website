@@ -1,0 +1,39 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <section class="row" id="firstlook">
+        <div class="col-sm">Catchy First look</div>
+        <div class="col-md">
+            <img src="https://via.placeholder.com/500x600" />
+        </div>
+    </section>
+
+    <div>DIVIDER HERE</div>
+
+    <section class="row" id="flagship1">
+        <div class="col-sm">
+            <p>@Model.FirstLook.Name</p>
+            <p>@Model.FirstLook.Descriptions[0].ShortDescription</p>
+        </div>
+        <div class="col-md">
+            <img src="https://via.placeholder.com/500x600" />
+        </div>
+    </section>
+
+    <div>DIVIDER HERE</div>
+    @foreach (Product product in Model.Flagships)
+    { 
+    <section class="row" id="flagship2">
+        <div class="col-sm">
+            <p>@product.Name</p>
+            <p>@product.Descriptions[0].ShortDescription</p>
+        </div>
+        <div class="col-md">
+            <img src="https://via.placeholder.com/500x600" />
+        </div>
+    </section>
+    }
+</div>
